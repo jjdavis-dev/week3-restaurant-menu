@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Menu from "./pages/Menu";
+import OrderPage from "./pages/OrderPage";
 
 function Home() {
   return (
@@ -16,11 +17,13 @@ export default function App() {
       <nav style={{ display: "flex", gap: 12, padding: 12 }}>
         <Link to="/">Home</Link>
         <Link to="/menu">Menu</Link>
+        <Link to="/order">Order Now</Link>
       </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/order" element={<OrderPage />} />
       </Routes>
     </BrowserRouter>
   );
