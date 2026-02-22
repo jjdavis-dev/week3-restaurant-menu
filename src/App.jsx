@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import Menu from "./pages/Menu";
 import OrderPage from "./pages/OrderPage";
 import Chatbot from "./pages/Chatbot";
@@ -12,14 +12,31 @@ function Home() {
   );
 }
 
+const navLinkStyle = ({ isActive }) => ({
+  textDecoration: "none",
+  padding: "8px 12px",
+  borderRadius: 10,
+  border: "1px solid #ddd",
+  fontWeight: isActive ? 700 : 500,
+  background: isActive ? "#f2f2f2" : "transparent",
+});
+
 export default function App() {
   return (
     <BrowserRouter>
-      <nav style={{ display: "flex", gap: 12, padding: 12 }}>
-        <Link to="/">Home</Link>
-        <Link to="/menu">Menu</Link>
-        <Link to="/order">Order Now</Link>
-        <Link to="/chat">AI Assistant</Link>
+      <nav style={{ display: "flex", gap: 12, padding: 12, flexWrap: "wrap" }}>
+        <NavLink to="/" style={navLinkStyle}>
+          Home
+        </NavLink>
+        <NavLink to="/menu" style={navLinkStyle}>
+          Menu
+        </NavLink>
+        <NavLink to="/order" style={navLinkStyle}>
+          Order
+        </NavLink>
+        <NavLink to="/chat" style={navLinkStyle}>
+          Chatbot
+        </NavLink>
       </nav>
 
       <Routes>
