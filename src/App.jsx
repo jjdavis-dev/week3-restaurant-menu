@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Menu from "./pages/Menu";
 import OrderPage from "./pages/OrderPage";
+import Chatbot from "./pages/Chatbot";
 
 function Home() {
   return (
@@ -18,12 +19,14 @@ export default function App() {
         <Link to="/">Home</Link>
         <Link to="/menu">Menu</Link>
         <Link to="/order">Order Now</Link>
+        <Link to="/chat">AI Assistant</Link>
       </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/order" element={<OrderPage />} />
+        <Route path="/chat" element={<Chatbot />} />
       </Routes>
     </BrowserRouter>
   );
